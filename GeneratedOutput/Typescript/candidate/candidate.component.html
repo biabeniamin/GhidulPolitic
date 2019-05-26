@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="card rerun">
+		<form (submit)="addCandidate($event)">
+			<div class="input-container">
+			<input type="text" placeholder= "Name" id="Name" />
+			<div class="bar"></div>
+			</div>
+			<div class="input-container">
+			<input type="text" placeholder= "Email" id="Email" />
+			<div class="bar"></div>
+			</div>
+			<div class="input-container">
+			<input type="text" placeholder= "Password" id="Password" />
+			<div class="bar"></div>
+			</div>
+			<div class="input-container">
+			<input type="text" placeholder= "Description" id="Description" />
+			<div class="bar"></div>
+			</div>
+			<div class="input-container">
+			<input type="text" placeholder= "Role" id="Role" />
+			<div class="bar"></div>
+			</div>
+			<div class="button-container">
+				<input type="submit" style="padding:20px; background:white;color:tomato;border:2px solid tomato;" value="Add">
+			</div>
+		</form>
+
+		<tbody>
+			<tr>
+				<th>
+					CandidateId
+				</th>
+				<th>
+					Name
+				</th>
+				<th>
+					Email
+				</th>
+				<th>
+					Password
+				</th>
+				<th>
+					Description
+				</th>
+				<th>
+					Role
+				</th>
+				<th>
+					CreationTime
+				</th>
+			</tr>
+			<tr *ngFor="let candidate of candidateService.candidates; let i = index">
+				<td>
+					{{candidate.candidateId}}
+				</td>
+				<td>
+					{{candidate.name}}
+				</td>
+				<td>
+					{{candidate.email}}
+				</td>
+				<td>
+					{{candidate.password}}
+				</td>
+				<td>
+					{{candidate.description}}
+				</td>
+				<td>
+					{{candidate.role}}
+				</td>
+				<td>
+					{{candidate.creationTime}}
+				</td>
+			</tr>
+		</tbody>
+
+	</div>
+</div>

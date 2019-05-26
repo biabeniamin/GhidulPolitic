@@ -4,30 +4,32 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 -- Following lines remove old tables from database
-DROP TABLE IF EXISTS`Partids`;
-DROP TABLE IF EXISTS`Candidats`;
+DROP TABLE IF EXISTS`Parties`;
+DROP TABLE IF EXISTS`Candidates`;
 DROP TABLE IF EXISTS`Notifications`;
 
-CREATE TABLE `Partids` (
-`PartidId` INT  NOT NULL,
-`Nume` VARCHAR(20)  NOT NULL,
-`Pozitie` INT  NOT NULL,
+CREATE TABLE `Parties` (
+`PartieId` INT  NOT NULL,
+`Name` VARCHAR(20)  NOT NULL,
+`Position` INT  NOT NULL,
 `CreationTime` DATETIME  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `Partids` ADD PRIMARY KEY(`PartidId`); 
-ALTER TABLE `Partids`  MODIFY `PartidId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1; 
+ALTER TABLE `Parties` ADD PRIMARY KEY(`PartieId`); 
+ALTER TABLE `Parties`  MODIFY `PartieId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1; 
 
-CREATE TABLE `Candidats` (
-`CandidatId` INT  NOT NULL,
-`Nume` VARCHAR(20)  NOT NULL,
-`Descriere` TEXT  NOT NULL,
-`Functie` VARCHAR(40)  NOT NULL,
+CREATE TABLE `Candidates` (
+`CandidateId` INT  NOT NULL,
+`Name` VARCHAR(20)  NOT NULL,
+`Email` VARCHAR(20)  NOT NULL,
+`Password` VARCHAR(20)  NOT NULL,
+`Description` TEXT  NOT NULL,
+`Role` VARCHAR(40)  NOT NULL,
 `CreationTime` DATETIME  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `Candidats` ADD PRIMARY KEY(`CandidatId`); 
-ALTER TABLE `Candidats`  MODIFY `CandidatId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1; 
+ALTER TABLE `Candidates` ADD PRIMARY KEY(`CandidateId`); 
+ALTER TABLE `Candidates`  MODIFY `CandidateId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1; 
 
 CREATE TABLE `Notifications` (
 `NotificationId` INT  NOT NULL,
