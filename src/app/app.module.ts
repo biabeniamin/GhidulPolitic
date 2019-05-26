@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
+import { DevelopersComponent } from './developers/developers.component';
 
 // app.module.ts
 
@@ -20,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     NavbarComponent,
     RegisterComponent,
+    DevelopersComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,11 @@ import { RegisterComponent } from './register/register.component';
    {
     path: 'register',
     component: RegisterComponent,
+ }
+ ,
+   {
+    path: 'developers',
+    component: DevelopersComponent,
  },
    ])
   ],
