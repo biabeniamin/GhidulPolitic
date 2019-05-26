@@ -1,0 +1,220 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+body,html{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../assets/images/form-bg.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+
+}
+i{
+    margin-right: 0.5rem;
+}
+h2,p{
+    color: white;
+}
+
+
+.cards-wrapper{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card{
+    width: 300px;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform .2s;
+}
+@keyframes cardAnim {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.card:nth-child(1) {
+    animation: cardAnim 1s 1s backwards;
+}
+
+.card:nth-child(2) {
+    animation: cardAnim 1s 1.5s backwards;
+}
+
+.card:nth-child(3) {
+    animation: cardAnim 1s 2s backwards;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+}
+.profile-image{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid white;
+    margin-top: -110px;
+    z-index: 10;
+}
+.card h1{
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 10px;
+}
+.job{
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    color:#777; 
+}
+.about-me{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    width: 90%;
+    margin: 15px 0px;
+    text-align: center;
+    color: #444;
+}
+.button{
+width: 150px;
+padding: 7px;
+font-size: 15px;
+border-radius: 25px;
+outline: none;
+border: none;
+/* border: 2px solid orange; */
+background: tomato;
+color: #eee;
+cursor: pointer;
+font-family: 'Josefin Sans', sans-serif;
+box-shadow: 5px 5px 20px rgba(0, 0,0, .4);
+}
+.card:hover button{
+    animation: buttonRotation 2s linear;
+}
+
+@keyframes buttonRotation{
+    0% {transform: scale(1) rotateZ(0)}
+    5% {transform: scale(1.2) rotateZ(5deg)}
+    10% {transform: scale(1.2) rotateZ(-5deg)}
+    15% {transform: scale(1.2) rotateZ(5deg)}
+    20% {transform: scale(1.2) rotateZ(-5deg)}
+    25% {transform: scale(1.2) rotateZ(5deg)}
+    30% {transform: scale(1.2) rotateZ(-5deg)}
+    35% {transform: scale(1.2) rotateZ(5deg)}
+    40% {transform: scale(1.2) rotateZ(-5deg)}
+    45% {transform: scale(1.2) rotateZ(5deg)}
+    50% {transform: scale(1.2) rotateZ(-5deg)}
+    55% {transform: scale(1.2) rotateZ(5deg)}
+    60% {transform: scale(1.2) rotateZ(-5deg)}
+    65% {transform: scale(1.2) rotateZ(5deg)}
+    70% {transform: scale(1.2) rotateZ(-5deg)}
+    75% {transform: scale(1.2) rotateZ(5deg)}
+    80% {transform: scale(1.2) rotateZ(-5deg)}
+    85% {transform: scale(1.2) rotateZ(5deg)}
+    90% {transform: scale(1.2) rotateZ(-5deg)}
+    95% {transform: scale(1.2) rotateZ(5deg)}
+    100% {transform: scale(1) rotateZ(0)}
+}
+.social-icons{
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type:none;
+    margin-top: 8%;
+    padding: 20px 20px;
+    border-top: 2px solid #999;
+}
+.social-icons i{
+    font-size: 18px;
+}
+.fa-facebook-f {
+    color: #3b5999;
+}
+
+.fa-youtube {
+    color: #cd201f;
+}
+
+.fa-twitter {
+    color: #55acee;
+}
+
+.fa-google-plus-g {
+    color: #dd4b39;
+}
+
+@media(max-width:1250px){
+    .cards-wrapper{
+        width: 100%;
+    }
+}
+
+@media(max-width:900px){
+    .cards-wrapper{
+        width: 100%;
+    }
+    .card{
+        flex-wrap: wrap;
+        width: 250px;
+    }
+}
+
+@media(max-width:800px){
+    .heading{
+        font-size: 45px;
+    }
+    .cards-wrapper{
+        width: 90%;
+    }
+    .card{
+        flex-wrap: wrap;
+        width: 200px;
+    }
+    .img-top{
+        height: 180px;
+    }
+}
+@media(max-width:700px){
+    .container{
+        height: 100%;
+    }
+.heading{
+    font-size: 35px;
+    width: 90%;
+    top: 5%;
+}
+.cards-wrapper{
+    width: 80%;
+    flex-wrap: wrap;
+    padding-top: 120px;
+}
+.card{
+    width: 260px;
+    margin-top: 20px;
+}
+}
+
+@media(max-width:768px){
+    .heading{
+        font-size: 40px;
+    }
+    .card{
+        width: 300px;
+    }
+}  

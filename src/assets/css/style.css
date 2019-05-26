@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;  
+   
+}
+
+
+/* This is next of NavBar part */
+.bg{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)), url("../images/bg1.jpg") center/cover no-repeat;
+}
+.content{
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.content p{
+    font-size: 1.5rem;
+}
+.btn-outline-primary{
+    border: 2px solid white!important;
+    outline: none!important;
+    margin: 0 10px;
+    animation-duration: 3s!important;
+}
+.btn-outline-primary:hover{
+    background-color: blanchedalmond !important;
+}
+.but a{
+    text-decoration: none !important;
+    color: white !important;
+}
+.but a:hover{
+    color: black !important;
+}
+
