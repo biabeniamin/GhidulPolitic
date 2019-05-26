@@ -1,0 +1,78 @@
+------------Partids----------
+http://192.168.0.100/messagesPartids.php?cmd=getPartids - GET request -return all Partids
+
+http://192.168.0.100/messagesPartids.php?cmd=getPartidsByPartidId&partidId=value - GET request -return Partids filtered by PartidId
+
+
+http://192.168.0.100/messagesPartids.php?cmd=addPartid&nume=Test&pozitie=0 - GET request -add a new Partid with specified data and return the item with id != 0 if was added
+
+
+http://192.168.0.100/messagesPartids.php?cmd=addPartid- POST request with following parameters
+nume : VARCHAR(20)
+pozitie : INT
+add a new Partid with specified data and returns the Partid with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesPartids.php?cmd=updatePartid- PUT request with following parameters
+partidId : INT
+nume : VARCHAR(20)
+pozitie : INT
+update a Partid by id and returns the Partid with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesPartids.php?cmd=updatePartid&partidId=0 - DELETE request
+deletes a Partid by id and returns the Partid with id == 0 if succeeded
+
+
+------------Candidats----------
+http://192.168.0.100/messagesCandidats.php?cmd=getCandidats - GET request -return all Candidats
+
+http://192.168.0.100/messagesCandidats.php?cmd=getCandidatsByCandidatId&candidatId=value - GET request -return Candidats filtered by CandidatId
+
+
+http://192.168.0.100/messagesCandidats.php?cmd=addCandidat&nume=Test&descriere=Test&functie=Test - GET request -add a new Candidat with specified data and return the item with id != 0 if was added
+
+
+http://192.168.0.100/messagesCandidats.php?cmd=addCandidat- POST request with following parameters
+nume : VARCHAR(20)
+descriere : TEXT
+functie : VARCHAR(40)
+add a new Candidat with specified data and returns the Candidat with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesCandidats.php?cmd=updateCandidat- PUT request with following parameters
+candidatId : INT
+nume : VARCHAR(20)
+descriere : TEXT
+functie : VARCHAR(40)
+update a Candidat by id and returns the Candidat with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesCandidats.php?cmd=updateCandidat&candidatId=0 - DELETE request
+deletes a Candidat by id and returns the Candidat with id == 0 if succeeded
+
+
+------------Notifications----------
+http://192.168.0.100/messagesNotifications.php?cmd=getNotifications - GET request -return all Notifications
+
+http://192.168.0.100/messagesNotifications.php?cmd=getNotificationsByNotificationId&notificationId=value - GET request -return Notifications filtered by NotificationId
+
+
+http://192.168.0.100/messagesNotifications.php?cmd=addNotification&title=Test - GET request -add a new Notification with specified data and return the item with id != 0 if was added
+
+
+http://192.168.0.100/messagesNotifications.php?cmd=addNotification- POST request with following parameters
+title : VARCHAR(15)
+add a new Notification with specified data and returns the Notification with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesNotifications.php?cmd=updateNotification- PUT request with following parameters
+notificationId : INT
+title : VARCHAR(15)
+update a Notification by id and returns the Notification with id != 0 if succeeded
+
+
+http://192.168.0.100/messagesNotifications.php?cmd=updateNotification&notificationId=0 - DELETE request
+deletes a Notification by id and returns the Notification with id == 0 if succeeded
+
+
