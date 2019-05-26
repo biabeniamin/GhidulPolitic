@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './register/register.component';
 
 // app.module.ts
 
@@ -18,19 +19,24 @@ import { NavbarComponent } from './navbar/navbar.component';
     MainComponent,
     LoginComponent,
     NavbarComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule.forRoot([
       {
-         path: 'main',
-         component: MainComponent,
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
+        path: 'main',
+        component: MainComponent,
      },
+     {
+      path: 'login',
+      component: LoginComponent,
+   },
+   {
+    path: 'register',
+    component: RegisterComponent,
+ },
    ])
   ],
   providers: [],
