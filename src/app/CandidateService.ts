@@ -20,6 +20,7 @@ export class CandidateService
 		});
 	}
 	
+	
 	GetLastCandidate()
 	{
 		return this.http.get<Candidate[]>(ServerUrl.GetUrl()  + "Candidates.php?cmd=getCandidates");
