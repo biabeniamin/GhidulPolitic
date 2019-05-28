@@ -190,35 +190,20 @@ namespace DatabaseFunctionsGenerator
       HttpContent file1 = files[0];
       var thisFileName = file1.Headers.ContentDisposition.FileName.Trim('\"');
 
-      ////-------------------------------------For testing----------------------------------  
-      //to append any text in filename.  
-      //var thisFileName = file1.Headers.ContentDisposition.FileName.Trim('\"') + DateTime.Now.ToString("yyyyMMddHHmmssfff"); //ToDo: Uncomment this after UAT as per Jeeevan  
-
-      //List<string> tempFileName = thisFileName.Split('.').ToList();  
-      //int counter = 0;  
-      //foreach (var f in tempFileName)  
-      //{  
-      //    if (counter == 0)  
-      //        thisFileName = f;  
-
-      //    if (counter > 0)  
-      //    {  
-      //        thisFileName = thisFileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + "." + f;  
-      //    }  
-      //    counter++;  
-      //}  
-
-      ////-------------------------------------For testing----------------------------------  
-
       string filename = String.Empty;
       Stream input = await file1.ReadAsStreamAsync();
       string directoryName = String.Empty;
       string URL = String.Empty;
       string tempDocUrl = "http://localhost:65165";
 
-      var path = "D:\\";
-      directoryName = System.IO.Path.Combine(path, "ClientDocument");
-      filename = System.IO.Path.Combine(directoryName, thisFileName);
+      //if (formData["ClientDocs"] == "ClientDocs")
+
+
+
+
+
+      var path = @"D:\xampp\htdocs\GhidImages";
+      filename = System.IO.Path.Combine(path, formData["userId"]+".jpg");
 
       //Deletion exists file  
       if (File.Exists(filename))
