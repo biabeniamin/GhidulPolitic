@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="card rerun">
+		<form (submit)="addPartie($event)">
+			<div class="input-container">
+			<input type="text" placeholder= "Name" id="Name" />
+			<div class="bar"></div>
+			</div>
+			<div class="input-container">
+			<input type="text" placeholder= "Position" id="Position" />
+			<div class="bar"></div>
+			</div>
+			<div class="button-container">
+				<input type="submit" style="padding:20px; background:white;color:tomato;border:2px solid tomato;" value="Add">
+			</div>
+		</form>
+
+		<tbody>
+			<tr>
+				<th>
+					PartieId
+				</th>
+				<th>
+					Name
+				</th>
+				<th>
+					Position
+				</th>
+				<th>
+					CreationTime
+				</th>
+			</tr>
+			<tr *ngFor="let partie of partieService.parties; let i = index">
+				<td>
+					{{partie.partieId}}
+				</td>
+				<td>
+					{{partie.name}}
+				</td>
+				<td>
+					{{partie.position}}
+				</td>
+				<td>
+					{{partie.creationTime}}
+				</td>
+			</tr>
+		</tbody>
+
+	</div>
+</div>
