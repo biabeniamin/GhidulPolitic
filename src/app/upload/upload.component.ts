@@ -17,6 +17,9 @@ export class UploadComponent implements OnInit {
 
   ngOnInit() {
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false;};
+    this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+      form.append('userId' , "5");
+     };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
          console.log('ImageUpload:uploaded:', item, status, response);
          alert('File uploaded successfully');
