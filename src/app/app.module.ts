@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // app.module.ts
 
@@ -26,6 +27,7 @@ import { DevelopersComponent } from './developers/developers.component';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'main',
