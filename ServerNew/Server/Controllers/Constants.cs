@@ -8,7 +8,7 @@ namespace Server.Controllers
     public static class Constants
     {
         public static string MysqlServer => "localhost";
-        public static string MysqlDatabase => "gen";
+        public static string MysqlDatabase => "ghidulpolitic";
         public static string MysqlUsername => "root";
         public static string MysqlPassword => "";
 
