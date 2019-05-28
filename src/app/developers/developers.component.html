@@ -10,50 +10,22 @@
       <!-- Card Content goes here -->
       <div class="bg">
       <div class="cards-wrapper">
-        <div class="card">
-            <img src="../assets/images/img-top1.jpeg" alt="img" class="img-top">
-            <img src="../assets/images/img1.jpeg" alt="image" class="profile-image">
-            <h1 class="fullname">John Doe</h1>
-            <p class="job">Web Designer</p>
-            <p class="about-me">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit magnam quis adipisci repudiandae itaque error reprehenderit voluptatibus quaerat, eos porro asperiores distinctio dolorum in ipsum iste vero consequatur fugit autem!"</p>
-            <button class="button">Explore Me</button>
-            <ul class="social-icons">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-            </ul>
-        </div>
   
-        <div class="card">
-                <img src="../assets/images/img-top2.jpeg" alt="img" class="img-top">
-                <img src="../assets/images/img2.jpeg" alt="image" class="profile-image">
-                <h1 class="fullname">John Doe</h1>
-                <p class="job">Web Designer</p>
-                <p class="about-me">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit magnam quis adipisci repudiandae itaque error reprehenderit voluptatibus quaerat, eos porro asperiores distinctio dolorum in ipsum iste vero consequatur fugit autem!"</p>
-                <button class="button">Explore Me</button>
-                <ul class="social-icons">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                </ul>
-            </div>
-  
-            <div class="card">
-                    <img src="../assets/images/img-top3.jpeg" alt="img" class="img-top">
-                    <img src="../assets/images/img3.jpeg" alt="image" class="profile-image">
-                    <h1 class="fullname">John Doe</h1>
-                    <p class="job">Web Designer</p>
-                    <p class="about-me">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit magnam quis adipisci repudiandae itaque error reprehenderit voluptatibus quaerat, eos porro asperiores distinctio dolorum in ipsum iste vero consequatur fugit autem!"</p>
-                    <button class="button">Explore Me</button>
-                    <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
+                <div class="card" *ngFor="let user of candidateService.candidates; let i = index">
+                        <img src="../assets/images/img-top2.jpeg" alt="img" class="img-top">
+                        <img src="../assets/images/img2.jpeg" alt="image" class="profile-image">
+                        <h1 class="fullname">{{user.name}}</h1>
+                        <p class="job">{{user.role}}</p>
+                        <p class="about-me">{{user.description}}</p>
+                        <button class="button">Explore Me</button>
+                        <ul class="social-icons">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
                 </div>
+  
     </div>
   </div>
   
