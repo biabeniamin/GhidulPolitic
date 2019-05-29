@@ -13,7 +13,7 @@
   
         <!--http://biabeniamin.go.ro/GhidImages/-->
                 <div class="card" *ngFor="let user of candidateService.candidates; let i = index">
-                        <img src="../assets/images/img-top2.jpeg" alt="img" class="img-top">
+                        <img src="http://biabeniamin.go.ro/GhidImages/Parties/{{user.partieId}}.jpg" alt="img" class="img-top">
                         <img src="http://biabeniamin.go.ro/GhidImages/{{user.candidateId}}.jpg" alt="image" class="profile-image">
                         <h1 class="fullname">{{user.name}}</h1>
                         <p class="job">{{user.role}}</p>
