@@ -11,7 +11,7 @@ export class PartieService
 	public parties : Partie[];
 	GetParties()
 	{
-		return this.http.get<Partie[]>(ServerUrl.GetUrl()  + "Parties.php?cmd=getParties").subscribe(data =>
+		return this.http.get<Partie[]>(ServerUrl.GetUrl()  + "partie").subscribe(data =>
 		{
 			this.parties = data;
 		});

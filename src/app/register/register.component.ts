@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CandidateService } from '../CandidateService';
+import { PartieService } from '../PartieService';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,8 @@ import { CandidateService } from '../CandidateService';
 export class RegisterComponent implements OnInit {
 
   constructor(private http:HttpClient, 
-		private candidateService : CandidateService) { }
+		private candidateService : CandidateService,
+		public partieService: PartieService) { }
 
   ngOnInit() {
   }
@@ -25,6 +27,7 @@ export class RegisterComponent implements OnInit {
 		candidate.password = target.querySelector('#Password').value;
 		candidate.description = target.querySelector('#Description').value;
 		candidate.role = target.querySelector('#Role').value;
+		candidate.partieId = target.querySelector('#UserIdDropDown').value;
 		console.log(candidate);
 		this.candidateService.AddCandidate(candidate);
 	}

@@ -10,6 +10,11 @@
               <input type="text" class="form-input" id="Role" placeholder="Enter Role">
               <input type="email" class="form-input" id="Email" placeholder="Enter Email" required>
               <input type="password" class="form-input" id="Password" placeholder="Enter Password">
+              <select id=UserIdDropDown>
+                <option [value]="user.partieId" *ngFor= "let user of partieService.parties" >
+                {{user.name}}
+                </option>
+            </select>
 
               <!-- <p>Get news ?</p>
               <label>No</label> 
