@@ -1,8 +1,13 @@
-<p>
-  upload works!
+<link rel="stylesheet" href="../assets/css/register.css">
+
+<app-navbar></app-navbar>
+  <!-- Registrtion content -->
+  <div class="bg">
+      <div class="form-container animated fadeIn delay-.2s">
+          <div class="sign-up-form">
 
 
-  <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+              <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
 
   <button type="button" class="btn btn-success btn-s" 
     (click)="uploader.uploadAll()" 
@@ -10,4 +15,29 @@
         Upload an Image
   </button>
 
-</p>
+              <!-- <p>Get news ?</p>
+              <label>No</label> 
+              <input type="checkbox">
+              <label>Yes</label> -->
+              <input type="submit" class="form-btn animated bounceIn delay-1s" value="Update" (click)="updateCandidate($event)"/>
+              </div>
+
+          <div class="header">
+              <h1 class="animated bounceInLeft delay-.8s">Welcome to update</h1>
+          </div>
+          <!-- <div class="x-btn">&#10005;</div> -->
+      
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="../js/register.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/popper.js/dist/popper.min.js"></script>
+
+
+
+
+  
+
