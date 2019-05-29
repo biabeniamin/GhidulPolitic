@@ -19,7 +19,7 @@ public image:string="http://biabeniamin.go.ro/GhidImages/3.jpg";
     private cookieService: CookieService) { 
 
       this.candidate=CandidateService.GetDefaultCandidate();
-      let userId = this.cookieService.get("userId");
+      let userId = this.cookieService.get("selectedUserId");
       if(userId!=null)
       {
         console.log("getting candidate");
