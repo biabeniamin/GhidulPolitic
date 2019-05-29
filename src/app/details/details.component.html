@@ -5,9 +5,9 @@
   <div class="bg">
       <div class="form-container animated fadeIn delay-.2s">
           <form class="sign-up-form" (submit)="addCandidate($event)">
-              <input type="text" class="form-input" id="Description" placeholder="Enter description">
-              <input type="text" class="form-input" id="Role" placeholder="Enter Role">
-              <input type="email" class="form-input" id="Email" placeholder="Enter Email" required>
+              <input type="text" class="form-input" id="Description" placeholder="Enter description" value="{{candidate.description}}">
+              <input type="text" class="form-input" id="Role" placeholder="Enter Role" value="{{candidate.role}}">
+              <input type="email" class="form-input" id="Email" placeholder="Enter Email" value="{{candidate.email}}" required>
 
               <!-- <p>Get news ?</p>
               <label>No</label> 
@@ -16,7 +16,7 @@
           </form>
 
           <div class="header"  [ngStyle]="{ 'background': 'url(' + image + ') no-repeat center'}" >
-              <h1 class="animated bounceInLeft delay-.8s">Welcome to Registration</h1>
+              <h1 class="animated bounceInLeft delay-.8s">{{candidate.name}}</h1>
           </div>
           <!-- <div class="x-btn">&#10005;</div> -->
       
