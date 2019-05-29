@@ -55,7 +55,7 @@ export class CandidateService
 	
 	UpdateCandidate(candidate)
 	{
-		return this.http.put<Candidate>(ServerUrl.GetUrl()  + "Candidates.php?cmd=updateCandidate", candidate).subscribe(candidate =>
+		return this.http.put<Candidate>(ServerUrl.GetUrl()  + "candidate", candidate).subscribe(candidate =>
 		{
 			console.log(candidate);
 			return candidate;
