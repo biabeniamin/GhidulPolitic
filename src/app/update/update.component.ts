@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from '../Models/Candidate';
 import { CandidateService } from '../CandidateService';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-update',
@@ -11,8 +13,20 @@ export class UpdateComponent implements OnInit {
 
   public candidate:Candidate ;
   public name : string="asfgas";
-  constructor() { 
+  constructor(private http:HttpClient, 
+    private candidateService : CandidateService,
+    private cookieService: CookieService) { 
     this.candidate=CandidateService.GetDefaultCandidate();
+    let userId = this.cookieService.get("userId");
+    if(userId!=null)
+    {
+      console.log("getting candidate");
+      candidateService.GetCandidatesByCandidateId(userId).subscribe((data) => {
+        console.log("candidate obtained");
+        console.log(data);
+        this.candidate = data[0];
+      });
+    }
     
   }
 
