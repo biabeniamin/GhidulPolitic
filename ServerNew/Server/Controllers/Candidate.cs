@@ -27,6 +27,7 @@ namespace DatabaseFunctionsGenerator
             (string)reader["Password"],
             (string)reader["Description"],
             (string)reader["Role"],
+            (int)reader["PartieId"],
             (DateTime)reader["CreationTime"]
         ));
       }
@@ -49,6 +50,7 @@ namespace DatabaseFunctionsGenerator
             (string)reader["Password"],
             (string)reader["Description"],
             (string)reader["Role"],
+            (int)reader["PartieId"],
             (DateTime)reader["CreationTime"]
         ));
       }
@@ -60,13 +62,14 @@ namespace DatabaseFunctionsGenerator
     public void Post([FromBody]Candidate data)
     {
       DatabaseOperations db = new DatabaseOperations();
-      MySqlCommand command = new MySqlCommand("INSERT INTO Candidates(Name,  Email,  Password,  Description,  Role,  CreationTime) VALUES(@Name,  @Email,  @Password,  @Description,  @Role,  @CreationTime)");
+      MySqlCommand command = new MySqlCommand("INSERT INTO Candidates(Name,  Email,  Password,  Description,  Role, PartieId,  CreationTime) VALUES(@Name,  @Email,  @Password,  @Description,  @Role, @PartieId,  @CreationTime)");
 
       command.Parameters.AddWithValue("@Name", data.Name);
       command.Parameters.AddWithValue("@Email", data.Email);
       command.Parameters.AddWithValue("@Password", data.Password);
       command.Parameters.AddWithValue("@Description", data.Description);
       command.Parameters.AddWithValue("@Role", data.Role);
+      command.Parameters.AddWithValue("@PartieId", data.PartieId);
       command.Parameters.AddWithValue("@CreationTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
       db.ExecuteQuery(command);

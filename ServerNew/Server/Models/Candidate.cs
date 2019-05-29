@@ -17,8 +17,17 @@ namespace DatabaseFunctionsGenerator
 		private string _description;
 		private string _role;
 		private DateTime _creationTime;
-		
-		[JsonProperty(PropertyName = "candidateId")]
+    private int _partieId;
+
+    [JsonProperty(PropertyName = "partieId")]
+    public int PartieId
+    {
+      get { return _partieId; }
+      set { _partieId = value; }
+    }
+
+
+    [JsonProperty(PropertyName = "candidateId")]
 		public int CandidateId
 		{
 			get
@@ -110,7 +119,7 @@ namespace DatabaseFunctionsGenerator
 		}
 		
 		
-		public Candidate(int candidateId, string name, string email, string password, string description, string role, DateTime creationTime)
+		public Candidate(int candidateId, string name, string email, string password, string description, string role, int partieId, DateTime creationTime)
 		{
 			_candidateId = candidateId;
 			_name = name;
@@ -118,6 +127,7 @@ namespace DatabaseFunctionsGenerator
 			_password = password;
 			_description = description;
 			_role = role;
+      _partieId = partieId;
 			_creationTime = creationTime;
 		}
 		
