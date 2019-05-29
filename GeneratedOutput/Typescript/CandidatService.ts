@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import { ServerUrl } from './ServerUrl'
 import { Injectable } from '@angular/core';
-import { Candidat } from '../app/Models/Candidat'
+import { Candidat } from './Models/Candidat';
 
 @Injectable({
     providedIn : 'root'
@@ -11,7 +11,8 @@ export class CandidatService
 	public candidats : Candidat[];
 	GetCandidats()
 	{
-		return this.http.get<Candidat[]>(ServerUrl.GetUrl()  + "Candidats.php?cmd=getCandidats").subscribe(data =>
+		console.log(ServerUrl.GetUrl())
+		return this.http.get<Candidat[]>(ServerUrl.GetUrl()  + "candidat").subscribe(data =>
 		{
 			this.candidats = data;
 		});
