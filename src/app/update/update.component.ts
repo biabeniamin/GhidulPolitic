@@ -38,6 +38,7 @@ export class UpdateComponent implements OnInit {
 		event.preventDefault();
     const target = event.target;
     console.log(this.candidate);
+    this.candidateService.UpdateCandidate(this.candidate);
 		/*let candidate = CandidateService.GetDefaultCandidate();
 		candidate.name = target.querySelector('#Name').value;
 		candidate.email = target.querySelector('#Email').value;
