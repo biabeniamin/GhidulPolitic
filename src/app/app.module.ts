@@ -15,6 +15,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { UpdateComponent } from './update/update.component';
+import { DetailsComponent } from './details/details.component';
 
 // app.module.ts
 
@@ -30,7 +31,8 @@ import { UpdateComponent } from './update/update.component';
     DevelopersComponent,
     UploadComponent,
     FileSelectDirective,
-    UpdateComponent
+    UpdateComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,10 @@ import { UpdateComponent } from './update/update.component';
 {
   path: 'update',
   component: UpdateComponent,
+},
+{
+  path: 'details',
+  component: DetailsComponent,
 }
  ,
    {
