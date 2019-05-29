@@ -73,7 +73,7 @@ export class CandidateService
 	
 	GetCandidatesByCandidateId(candidateId)
 	{
-		return this.http.get<Candidate[]>(ServerUrl.GetUrl()  + `Candidates.php?cmd=getCandidatesByCandidateId&candidateId=${candidateId}`);
+		return this.http.get<Candidate[]>(ServerUrl.GetUrl()  + `candidate/${candidateId}`);
 	}
 	
 
