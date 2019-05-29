@@ -55,7 +55,7 @@ import { DetailsComponent } from './details/details.component';
  {
   path: 'register',
   component: RegisterComponent,
-}
+},
 {
   path: 'update',
   component: UpdateComponent,

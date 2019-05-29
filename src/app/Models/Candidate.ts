@@ -9,6 +9,7 @@ export interface Candidate
 	password : string;
 	description : string;
 	role : string;
+	partieId : number;
 	creationTime : string;
 
 }

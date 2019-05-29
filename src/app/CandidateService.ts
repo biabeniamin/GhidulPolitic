@@ -35,6 +35,7 @@ export class CandidateService
 		password : 'Test',
 		description : 'Test',
 		role : 'Test',
+		partieId : 0,
 		creationTime : '2000-01-01 00:00:00'
 		};
 	}
