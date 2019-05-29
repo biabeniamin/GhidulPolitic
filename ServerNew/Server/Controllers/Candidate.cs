@@ -12,27 +12,49 @@ namespace DatabaseFunctionsGenerator
 {
 	public class CandidateController : ApiController
 	{
-		// GET candidates/values
-		public IEnumerable<Candidate> Get()
-		{
-			MySqlDataReader reader = new DatabaseOperations().GetReader("SELECT * FROM Candidates");
-			List<Candidate> list = new List<Candidate>();
-			
-			while(reader.Read())
-			{
-				list.Add(new Candidate(
-					(int)reader["CandidateId"],
-					(string)reader["Name"],
-					(string)reader["Email"],
-					(string)reader["Password"],
-					(string)reader["Description"],
-					(string)reader["Role"],
-					(DateTime)reader["CreationTime"]
-				));
-			}
-			
-			return list;
-		}
+    // GET candidates/values
+    public IEnumerable<Candidate> Get()
+    {
+      MySqlDataReader reader = new DatabaseOperations().GetReader("SELECT * FROM Candidates");
+      List<Candidate> list = new List<Candidate>();
+
+      while (reader.Read())
+      {
+        list.Add(new Candidate(
+            (int)reader["CandidateId"],
+            (string)reader["Name"],
+            (string)reader["Email"],
+            (string)reader["Password"],
+            (string)reader["Description"],
+            (string)reader["Role"],
+            (DateTime)reader["CreationTime"]
+        ));
+      }
+
+      return list;
+    }
+
+    // GET candidates/candidateId
+    public IEnumerable<Candidate> Get(int id)
+    {
+      MySqlDataReader reader = new DatabaseOperations().GetReader($"SELECT * FROM Candidates where CandidateId = {id}");
+      List<Candidate> list = new List<Candidate>();
+
+      while (reader.Read())
+      {
+        list.Add(new Candidate(
+            (int)reader["CandidateId"],
+            (string)reader["Name"],
+            (string)reader["Email"],
+            (string)reader["Password"],
+            (string)reader["Description"],
+            (string)reader["Role"],
+            (DateTime)reader["CreationTime"]
+        ));
+      }
+
+      return list;
+    }
 
     // POST candidates/values
     public void Post([FromBody]Candidate data)
@@ -50,7 +72,7 @@ namespace DatabaseFunctionsGenerator
       db.ExecuteQuery(command);
     }
 
-    // PUT candidates/values
+    // PUT candidates/valuesd
     public void PUT([FromBody]Candidate data)
     {
       DatabaseOperations db = new DatabaseOperations();
