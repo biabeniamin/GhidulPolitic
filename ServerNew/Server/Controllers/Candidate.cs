@@ -33,25 +33,41 @@ namespace DatabaseFunctionsGenerator
 			
 			return list;
 		}
-		
-		// POST candidates/values
-		public void Post([FromBody]Candidate data)
-		{
-			DatabaseOperations db = new DatabaseOperations();
-			MySqlCommand command = new MySqlCommand("INSERT INTO Candidates(Name,  Email,  Password,  Description,  Role,  CreationTime) VALUES(@Name,  @Email,  @Password,  @Description,  @Role,  @CreationTime)");
-			
-			command.Parameters.AddWithValue("@Name", data.Name);
-			command.Parameters.AddWithValue("@Email", data.Email);
-			command.Parameters.AddWithValue("@Password", data.Password);
-			command.Parameters.AddWithValue("@Description", data.Description);
-			command.Parameters.AddWithValue("@Role", data.Role);
-			command.Parameters.AddWithValue("@CreationTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-			
-			db.ExecuteQuery(command);
-		}
-		
-		// DELETE candidates/values/id
-		public void Delete(int id)
+
+    // POST candidates/values
+    public void Post([FromBody]Candidate data)
+    {
+      DatabaseOperations db = new DatabaseOperations();
+      MySqlCommand command = new MySqlCommand("INSERT INTO Candidates(Name,  Email,  Password,  Description,  Role,  CreationTime) VALUES(@Name,  @Email,  @Password,  @Description,  @Role,  @CreationTime)");
+
+      command.Parameters.AddWithValue("@Name", data.Name);
+      command.Parameters.AddWithValue("@Email", data.Email);
+      command.Parameters.AddWithValue("@Password", data.Password);
+      command.Parameters.AddWithValue("@Description", data.Description);
+      command.Parameters.AddWithValue("@Role", data.Role);
+      command.Parameters.AddWithValue("@CreationTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+      db.ExecuteQuery(command);
+    }
+
+    // PUT candidates/values
+    public void PUT([FromBody]Candidate data)
+    {
+      DatabaseOperations db = new DatabaseOperations();
+      MySqlCommand command = new MySqlCommand("INSERT INTO Candidates(Name,  Email,  Password,  Description,  Role,  CreationTime) VALUES(@Name,  @Email,  @Password,  @Description,  @Role,  @CreationTime)");
+
+      command.Parameters.AddWithValue("@Name", data.Name);
+      command.Parameters.AddWithValue("@Email", data.Email);
+      command.Parameters.AddWithValue("@Password", data.Password);
+      command.Parameters.AddWithValue("@Description", data.Description);
+      command.Parameters.AddWithValue("@Role", data.Role);
+      command.Parameters.AddWithValue("@CreationTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+      db.ExecuteQuery(command);
+    }
+
+    // DELETE candidates/values/id
+    public void Delete(int id)
 		{
 			DatabaseOperations db = new DatabaseOperations();
 			MySqlCommand command = new MySqlCommand("DELETE FROM Candidates WHERE CandidateId=@Id");
