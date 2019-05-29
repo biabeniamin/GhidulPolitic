@@ -1,3 +1,5 @@
+using MultipartDataMediaFormatter;
+using MultipartDataMediaFormatter.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,15 @@ namespace Server
         public static void Register(HttpConfiguration config)
         {
       // Web API configuration and services
-
+      GlobalConfiguration.Configuration.Formatters.Add
+(new FormMultipartEncodedMediaTypeFormatter(new MultipartFormatterSettings()));
 
 
       var cors = new EnableCorsAttribute("*", "*", "*");
       config.EnableCors(cors);
 
+
+      config.Formatters.XmlFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data"));
 
       // Web API routes
       config.MapHttpAttributeRoutes();
