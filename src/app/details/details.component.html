@@ -1,3 +1,33 @@
-<p>
-  details works!
-</p>
+<link rel="stylesheet" href="../assets/css/register.css">
+
+<app-navbar></app-navbar>
+  <!-- Registrtion content -->
+  <div class="bg">
+      <div class="form-container animated fadeIn delay-.2s">
+          <form class="sign-up-form" (submit)="addCandidate($event)">
+              <input type="text" class="form-input" id="Name" placeholder="Enter Full Name" required>
+              <input type="text" class="form-input" id="Description" placeholder="Enter description">
+              <input type="text" class="form-input" id="Role" placeholder="Enter Role">
+              <input type="email" class="form-input" id="Email" placeholder="Enter Email" required>
+              <input type="password" class="form-input" id="Password" placeholder="Enter Password">
+
+              <!-- <p>Get news ?</p>
+              <label>No</label> 
+              <input type="checkbox">
+              <label>Yes</label> -->
+              <input type="submit" class="form-btn animated bounceIn delay-1s" value="Submit"/>
+          </form>
+
+          <div class="header"  [ngStyle]="{ 'background': 'url(' + image + ') no-repeat center'}" >
+              <h1 class="animated bounceInLeft delay-.8s">Welcome to Registration</h1>
+          </div>
+          <!-- <div class="x-btn">&#10005;</div> -->
+      
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="../js/register.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/popper.js/dist/popper.min.js"></script>
