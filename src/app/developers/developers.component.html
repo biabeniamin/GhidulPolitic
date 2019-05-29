@@ -18,7 +18,7 @@
                         <h1 class="fullname">{{user.name}}</h1>
                         <p class="job">{{user.role}}</p>
                         <p class="about-me">{{user.description}}</p>
-                        <button class="button">Explore Me</button>
+                        <button class="button" (click)="explore(user.candidateId)">Explore Me</button>
                         <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
