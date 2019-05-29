@@ -5,15 +5,11 @@
   <div class="bg">
       <div class="form-container animated fadeIn delay-.2s">
           <div class="sign-up-form">
-
-
-              <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-
-  <button type="button" class="btn btn-success btn-s" 
-    (click)="uploader.uploadAll()" 
-    [disabled]="!uploader.getNotUploadedItems().length" >
-        Upload an Image
-  </button>
+              <input type="text" class="form-input" id="Name" placeholder="Enter Full Name" [(ngModel)]="candidate.name" required>
+              <input type="text" class="form-input" id="Description" placeholder="Enter description" [(ngModel)]="candidate.description">
+              <input type="text" class="form-input" id="Role" placeholder="Enter Role" [(ngModel)]="candidate.role">
+              <input type="email" class="form-input" id="Email" placeholder="Enter Email" [(ngModel)]="candidate.email" required>
+              <input type="password" class="form-input" id="Password" placeholder="Enter Password" [(ngModel)]="candidate.password">
 
               <!-- <p>Get news ?</p>
               <label>No</label> 
@@ -35,9 +31,3 @@
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/popper.js/dist/popper.min.js"></script>
-
-
-
-
-  
-

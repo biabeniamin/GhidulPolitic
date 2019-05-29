@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public userId:number = 1;
+
+  constructor(private cookieService: CookieService) { 
+    this.userId = Number(this.cookieService.get("userId"));
+  }
 
   ngOnInit() {
   }

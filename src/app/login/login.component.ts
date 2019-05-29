@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { forEach } from '@angular/router/src/utils/collection';
 import { Candidate } from '../Models/Candidate'
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private http:HttpClient, 
     private candidateService : CandidateService,
-    private cookieService: CookieService) { }
+    private cookieService: CookieService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
       {
         console.log(cand);
         this.cookieService.set( 'userId', cand.candidateId.toString() );
+        this.router.navigate(['/update']);
       }
     }
     

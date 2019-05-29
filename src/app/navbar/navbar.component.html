@@ -21,6 +21,12 @@
         <li class="nav-item">
           <a class="nav-link" href="login">Login</a>
         </li>
+        <li class="nav-item" *ngIf="userId">
+          <a class="nav-link" href="update">Update Info</a>
+        </li>
+        <li class="nav-item" *ngIf="userId">
+          <a class="nav-link" href="upload">Update photo</a>
+        </li>
     </ul>
   </div>
 </div>
